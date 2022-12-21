@@ -15,7 +15,11 @@ Each line in `core_data.jsonl` is a JSON object with two fields - `instruction`,
 - `output`: The output of executing `instruction` with the given `input`
 
 ### Full data
-`core_data.jsonl` has the same structure as `core_data.jsonl`, but with one additional field - `reformulations`. `reformulations` is an array of JSON objects, each corresponds to an automatically generated paraphrase for the given instruction. The structure of each JSON object is identical to the one described above for `instances`.
+`core_data.jsonl` has the same structure as `core_data.jsonl`, but with one additional field - `reformulations`. `reformulations` is an array of JSON objects, each corresponds to an automatically generated paraphrase for the given instruction. Each reformulation contains the fields:
+- `instruction`: A paraphrase of the original instruction
+- `input`: An input for the task described by the `instruction`
+- `instruction_with_input`: The paraphrased instruction concatenated with the `input`
+- `output`: The output of executing `instruction` with the given `input`
 
 ## 📘 Citation
 If you make use of Unnatural Instructions, please cite the following paper:
